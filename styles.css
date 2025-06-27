@@ -86,8 +86,8 @@ nav {
 }
 
 .profile-image {
-    width: 50vw;
-    height: 50vh;
+    width: 320px;
+    height: 320px;
     margin: 0 auto;
     padding: 0;
     background: none;
@@ -101,10 +101,17 @@ nav {
 .profile-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border: none;
-    box-shadow: none;
-    background: none;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 8px 32px rgba(184, 155, 94, 0.18), 0 1.5px 8px rgba(0,0,0,0.07);
+    background: linear-gradient(135deg, #fdf6ee 0%, #f7f6f3 100%);
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.profile-image img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 16px 48px rgba(184, 155, 94, 0.22), 0 3px 16px rgba(0,0,0,0.10);
 }
 
 @keyframes pulse {
@@ -420,6 +427,10 @@ footer {
         max-width: 300px;
         height: auto;
     }
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
 }
 
 /* Responsive Design */
@@ -445,8 +456,8 @@ footer {
     }
     
     .profile-image {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
     }
 }
 

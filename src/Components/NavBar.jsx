@@ -1,6 +1,8 @@
-import { useMemo, useState } from "react";
+import { useId, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { BookOpen, Github, Home, Linkedin, Moon, PackageOpen, Sun, Twitter, UserRound, FileText } from "lucide-react";
 import useTheme from "./useTheme";
+import { generateDisplacementMap } from "./liquidGlass";
 
 const navLinks = [
   { href: "/", label: "Home", Icon: Home },
@@ -9,10 +11,123 @@ const navLinks = [
   { href: "/bookshelf", label: "Books", Icon: BookOpen },
 ];
 
+// Lens geometry for the glass. `scale` controls how hard the backdrop bends.
+const GLASS_RADIUS = 9999; // clamped to half-height inside the generator
+const GLASS_DEPTH = 16; // px band, inward from the rim, that refracts
+const GLASS_SCALE = 22; // peak pixel displacement fed to feDisplacementMap
+
+// iOS-style springs: snappy capsule pop + tactile press.
+const CAPSULE_SPRING = { type: "spring", stiffness: 460, damping: 26, mass: 0.7 };
+const PRESS_SPRING = { type: "spring", stiffness: 600, damping: 28 };
+
+const cellInner = "relative grid h-10 w-10 place-items-center rounded-full sm:h-11 sm:w-11";
+
+// A single tappable cell: shared press/hover spring + a hover tooltip.
+function Cell({ item, theme, children }) {
+  return (
+    <motion.div
+      className={`group relative ${item.social ? "hidden sm:block" : "block"}`}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.82 }}
+      transition={PRESS_SPRING}
+    >
+      <span
+        className={`pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-black px-3 py-1.5 text-xs font-semibold opacity-0 shadow-xl shadow-black/30 transition-opacity duration-150 group-hover:opacity-100 ${theme.tooltip}`}
+      >
+        {item.label}
+      </span>
+      {children}
+    </motion.div>
+  );
+}
+
+const iconFor = (Icon, active, theme) => (
+  <Icon
+    className={`relative z-10 ${active ? theme.active : `${theme.idle} ${theme.idleHover}`} transition-colors duration-200`}
+    size={18}
+    strokeWidth={active ? 2.6 : 2.1}
+    // Filled look on the active tab, like SF Symbols' filled variant.
+    fill={active ? "currentColor" : "none"}
+    fillOpacity={active ? 0.16 : 0}
+  />
+);
+
 function NavBar() {
   const { isLight, isTransitioning, toggleTheme } = useTheme();
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const pathname = typeof window === "undefined" ? "/" : window.location.pathname;
+
+  // Palette adapts to the page behind the glass so icons stay legible on both
+  // the dark and light backgrounds.
+  const theme = isLight
+    ? {
+        bar: "border-white/60 bg-white/30",
+        idle: "text-zinc-500",
+        idleHover: "hover:text-zinc-900",
+        active: "text-emerald-600",
+        capsule: "bg-white ring-1 ring-zinc-950/[0.06] shadow-[0_4px_12px_rgba(24,24,27,0.16)]",
+        divider: "border-zinc-400/50",
+        tooltip: "bg-zinc-900 text-[#ffffff]",
+        sheen: "bg-[linear-gradient(180deg,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0.12)_22%,transparent_46%)]",
+      }
+    : {
+        bar: "border-white/15 bg-zinc-900/35",
+        idle: "text-zinc-300",
+        idleHover: "hover:text-white",
+        active: "text-emerald-300",
+        capsule: "bg-white/15 ring-1 ring-white/25 shadow-[0_4px_14px_rgba(0,0,0,0.4)]",
+        divider: "border-white/20",
+        tooltip: "bg-white text-zinc-900",
+        sheen: "bg-[linear-gradient(180deg,rgba(255,255,255,0.45)_0%,rgba(255,255,255,0.08)_22%,transparent_46%)]",
+      };
+
+  // --- Liquid glass plumbing -------------------------------------------------
+  const dockRef = useRef(null);
+  const baseFilterId = useId().replace(/[:]/g, "");
+  const [glass, setGlass] = useState({ map: "", width: 0, height: 0, version: 0 });
+
+  useLayoutEffect(() => {
+    const node = dockRef.current;
+    if (!node) return undefined;
+
+    let frame = 0;
+    const regenerate = () => {
+      const rect = node.getBoundingClientRect();
+      const width = Math.round(rect.width);
+      const height = Math.round(rect.height);
+      if (width === 0 || height === 0) return;
+
+      // Skip work when the shape hasn't changed — the map is portable across
+      // position, only its *shape* matters (per the Aave write-up).
+      setGlass((prev) => {
+        if (prev.width === width && prev.height === height && prev.map) return prev;
+        const map = generateDisplacementMap({
+          width,
+          height,
+          radius: Math.min(GLASS_RADIUS, height / 2),
+          depth: GLASS_DEPTH,
+        });
+        // Bump version -> fresh filter id so Safari can't serve a stale,
+        // ID-cached filter result and freeze the glass mid-resize.
+        return { map, width, height, version: prev.version + 1 };
+      });
+    };
+
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(regenerate);
+    };
+
+    schedule();
+    const observer = new ResizeObserver(schedule);
+    observer.observe(node);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
+  }, []);
+
+  const filterId = `${baseFilterId}-${glass.version}`;
+  const glassReady = Boolean(glass.map);
 
   const activePath = useMemo(() => {
     if (pathname.startsWith("/projects")) return "/projects";
@@ -21,9 +136,8 @@ function NavBar() {
     return "/";
   }, [pathname]);
 
-  const dockItems = useMemo(
+  const utilityItems = useMemo(
     () => [
-      ...navLinks.map((item) => ({ ...item, type: "route" })),
       {
         href: "https://github.com/lakshay-goyal",
         label: "GitHub",
@@ -61,117 +175,93 @@ function NavBar() {
     [isLight, toggleTheme]
   );
 
-  const getDockStyle = (index) => {
-    if (hoveredIndex === null) {
-      const item = dockItems[index];
-      const isActive = item.type === "route" && activePath === item.href;
-      return {
-        transform: `translateY(${isActive ? -2 : 0}px) scale(${isActive ? 1.06 : 1})`,
-      };
-    }
-
-    const distance = Math.abs(hoveredIndex - index);
-    const scale = distance === 0 ? 1.16 : distance === 1 ? 1.07 : distance === 2 ? 1.02 : 1;
-    const translateY = distance === 0 ? -5 : distance === 1 ? -2 : 0;
-
-    return {
-      transform: `translateY(${translateY}px) scale(${scale})`,
-    };
+  const renderRoute = (item) => {
+    const active = activePath === item.href;
+    return (
+      <Cell key={item.href} item={item} theme={theme}>
+        <a href={item.href} aria-label={item.label} aria-current={active ? "page" : undefined} className={cellInner}>
+          {active && (
+            // iOS-native selection: the capsule springs/pops into place right
+            // after the tab switch (plays on mount, since nav reloads the page).
+            <motion.span
+              aria-hidden="true"
+              className={`absolute inset-0 rounded-full ${theme.capsule}`}
+              initial={{ scale: 0.35, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={CAPSULE_SPRING}
+            />
+          )}
+          {iconFor(item.Icon, active, theme)}
+        </a>
+      </Cell>
+    );
   };
 
-  const dockGap = hoveredIndex === null ? "0.25rem" : "0.56rem";
-  const groupGap = hoveredIndex === null ? "0.25rem" : "0.44rem";
-
-  const renderDockItem = (item, index) => {
-    const { href, label, Icon, type, onClick, social } = item;
-    const isActive = type === "route" && activePath === href;
-    const sharedClassName = `relative ${social ? "hidden sm:grid" : "grid"} h-10 w-10 place-items-center rounded-full transition-[transform,background-color,color,box-shadow] duration-200 ease-out will-change-transform sm:h-11 sm:w-11 ${
-      isActive
-        ? "bg-zinc-950 text-white shadow-[0_10px_24px_rgba(0,0,0,0.22)]"
-        : "text-zinc-950 hover:bg-zinc-950/[0.08]"
-    }`;
-    const sharedProps = {
-      "aria-label": label,
-      title: label,
-      className: sharedClassName,
-      style: {
-        ...getDockStyle(index),
-        transformOrigin: "bottom center",
-      },
-      onMouseEnter: () => setHoveredIndex(index),
-      onMouseLeave: () => setHoveredIndex(null),
-      onFocus: () => setHoveredIndex(index),
-      onBlur: () => setHoveredIndex(null),
-    };
-    const content = (
-      <>
-        <span
-          aria-hidden="true"
-          className={`pointer-events-none absolute inset-0 rounded-[48%_52%_44%_56%] bg-white/95 shadow-[0_8px_18px_rgba(24,24,27,0.16)] ring-1 ring-zinc-950/10 transition-all duration-200 ease-out ${
-            hoveredIndex === index ? "scale-[1.08] opacity-100" : "scale-90 opacity-0"
-          }`}
-        />
-        <span
-          className={`pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-zinc-950 px-3 py-1.5 text-xs font-semibold text-white shadow-2xl shadow-black/30 transition-all duration-150 ${
-            hoveredIndex === index ? "translate-y-0 scale-100 opacity-100" : "translate-y-1 scale-95 opacity-0"
-          }`}
-        >
-          {label}
-        </span>
-        <Icon
-          className={`relative z-10 transition-colors duration-150 ${
-            hoveredIndex === index ? "text-zinc-950" : ""
-          }`}
-          size={18}
-          strokeWidth={2.2}
-        />
-      </>
-    );
-
-    if (type === "button") {
+  const renderUtility = (item) => {
+    const shared = { "aria-label": item.label, className: cellInner };
+    if (item.type === "button") {
       return (
-        <button
-          key={label}
-          type="button"
-          onClick={onClick}
-          disabled={isTransitioning}
-          aria-pressed={isLight}
-          {...sharedProps}
-        >
-          {content}
-        </button>
+        <Cell key={item.label} item={item} theme={theme}>
+          <button type="button" onClick={item.onClick} disabled={isTransitioning} aria-pressed={isLight} {...shared}>
+            {iconFor(item.Icon, false, theme)}
+          </button>
+        </Cell>
       );
     }
-
     return (
-      <a
-        key={href}
-        href={href}
-        target={type === "external" ? "_blank" : undefined}
-        rel={type === "external" ? "noopener noreferrer" : undefined}
-        {...sharedProps}
-      >
-        {content}
-      </a>
+      <Cell key={item.href} item={item} theme={theme}>
+        <a href={item.href} target="_blank" rel="noopener noreferrer" {...shared}>
+          {iconFor(item.Icon, false, theme)}
+        </a>
+      </Cell>
     );
   };
 
   return (
     <nav className="fixed inset-x-0 bottom-3 z-50 px-3 sm:bottom-5" aria-label="Primary navigation">
+      {/* Off-screen SVG holding the refraction filter. feImage carries the
+          generated displacement map; feDisplacementMap bends the backdrop the
+          glass sits over. Re-rendered with a fresh id on every resize. */}
+      {glassReady && (
+        <svg aria-hidden="true" className="pointer-events-none absolute h-0 w-0" width="0" height="0">
+          <defs>
+            <filter id={filterId} x="-35%" y="-35%" width="170%" height="170%" colorInterpolationFilters="sRGB">
+              <feImage
+                href={glass.map}
+                x="0"
+                y="0"
+                width={glass.width}
+                height={glass.height}
+                preserveAspectRatio="none"
+                result="map"
+              />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale={GLASS_SCALE} xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+          </defs>
+        </svg>
+      )}
+
       <div
-        className="mx-auto flex w-max max-w-full items-end gap-1 rounded-full border border-zinc-950/20 bg-white/[0.94] p-1.5 text-zinc-950 shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_16px_44px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(0,0,0,0.08)] backdrop-blur-2xl supports-[backdrop-filter]:bg-white/[0.86]"
-        style={{ gap: dockGap, transition: "gap 180ms ease-out" }}
-        onMouseLeave={() => setHoveredIndex(null)}
+        ref={dockRef}
+        className={`liquid-glass relative mx-auto flex w-max max-w-full items-center gap-1.5 rounded-full border p-1.5 shadow-[0_16px_44px_rgba(0,0,0,0.30),inset_0_1px_0_rgba(255,255,255,0.55)] sm:gap-2 ${theme.bar}`}
+        style={{
+          backdropFilter: glassReady
+            ? `blur(2px) url(#${filterId}) saturate(1.4) brightness(1.04)`
+            : "blur(14px) saturate(1.4)",
+          WebkitBackdropFilter: glassReady
+            ? `blur(2px) url(#${filterId}) saturate(1.4) brightness(1.04)`
+            : "blur(14px) saturate(1.4)",
+        }}
       >
-        <div className="flex min-w-0 items-end" style={{ gap: groupGap, transition: "gap 180ms ease-out" }}>
-          {dockItems.slice(0, navLinks.length).map(renderDockItem)}
-        </div>
+        {/* Specular sheen: a soft top-edge highlight that keeps the glass
+            legible against whatever scrolls underneath it. */}
+        <span aria-hidden="true" className={`pointer-events-none absolute inset-0 rounded-full mix-blend-screen ${theme.sheen}`} />
 
-        <div className="mx-1 mb-2 h-7 w-px border-l border-dashed border-zinc-300" />
+        <div className="relative flex items-center gap-1.5 sm:gap-2">{navLinks.map(renderRoute)}</div>
 
-        <div className="flex items-end" style={{ gap: groupGap, transition: "gap 180ms ease-out" }}>
-          {dockItems.slice(navLinks.length).map((item, offset) => renderDockItem(item, navLinks.length + offset))}
-        </div>
+        <div className={`relative mx-0.5 h-7 w-px border-l border-dashed ${theme.divider}`} />
+
+        <div className="relative flex items-center gap-1.5 sm:gap-2">{utilityItems.map(renderUtility)}</div>
       </div>
     </nav>
   );

@@ -59,7 +59,7 @@ const socialLinks = [
   },
   {
     label: "GitHub",
-    handle: "@lakshay-goyal",
+    handle: "@lakshay-devs (Temporary) · primary acct have some issues",
     href: "https://github.com/lakshay-devs",
     Icon: Github,
   },

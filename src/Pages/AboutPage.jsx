@@ -152,7 +152,7 @@ function AboutPage() {
             </a>
             <div className="flex items-center gap-2">
               <a
-                href="https://github.com/lakshay-goyal"
+                href="https://github.com/lakshay-devs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:text-white"

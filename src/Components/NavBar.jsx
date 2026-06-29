@@ -139,7 +139,7 @@ function NavBar() {
   const utilityItems = useMemo(
     () => [
       {
-        href: "https://github.com/lakshay-goyal",
+        href: "https://github.com/lakshay-devs",
         label: "GitHub",
         Icon: Github,
         type: "external",

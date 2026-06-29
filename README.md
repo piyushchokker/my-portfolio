@@ -8,11 +8,11 @@ These are the projects featured on the site. Each one taught me something I coul
 
 ### 🤖 [Unlovable](https://unlovable.lakshaygoyal.in/) — AI-powered app builder
 
-Type a prompt, get a working web or mobile application. Lovable, but mine — hence the name. Under the hood: LangChain + LangGraph agents with RAG, code execution inside E2B sandboxes, WebSockets for live streaming of the build, Redis + PostgreSQL holding it all together in a Turborepo monorepo. There's also a second architecture variant I built from scratch on Kubernetes + Docker + Nginx specifically to handle scalable AI workloads — because one architecture is never enough. Also has a React Native mobile builder variant. [Code →](https://github.com/lakshay-goyal/Unlovable)
+Type a prompt, get a working web or mobile application. Lovable, but mine — hence the name. Under the hood: LangChain + LangGraph agents with RAG, code execution inside E2B sandboxes, WebSockets for live streaming of the build, Redis + PostgreSQL holding it all together in a Turborepo monorepo. There's also a second architecture variant I built from scratch on Kubernetes + Docker + Nginx specifically to handle scalable AI workloads — because one architecture is never enough. Also has a React Native mobile builder variant. [Code →](https://github.com/lakshay-devs/Unlovable)
 
 ### 📈 [Exness](https://exness.lakshaygoyal.in/) — CFD trading platform
 
-Real-time crypto prices streamed from Binance, buy/sell order placement, candlestick charts — the whole trading experience. This one was a real-time systems masterclass: Redis pub-sub fanning out price ticks, TimescaleDB for time-series candles, WebSockets keeping every connected client in sync. Deployed on AWS with Terraform, load balancers, and auto-scaling groups, plus monitoring to watch users actually use it. Mobile version built with React Native/Expo. [Code →](https://github.com/lakshay-goyal/Exness)
+Real-time crypto prices streamed from Binance, buy/sell order placement, candlestick charts — the whole trading experience. This one was a real-time systems masterclass: Redis pub-sub fanning out price ticks, TimescaleDB for time-series candles, WebSockets keeping every connected client in sync. Deployed on AWS with Terraform, load balancers, and auto-scaling groups, plus monitoring to watch users actually use it. Mobile version built with React Native/Expo. [Code →](https://github.com/lakshay-devs/Exness)
 
 There's a longer tail of smaller projects on the site too — clones, tools, experiments. The graveyard of side projects is where the learning happened.
 
@@ -66,6 +66,6 @@ If you want to deploy your own version, `terraform/` has everything — bring yo
 - 📧 [lakshaygoyal201@gmail.com](mailto:lakshaygoyal201@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/lakshay-goyal-9778a6246)
 - 🐦 [@lakshayg2004](https://twitter.com/lakshayg2004)
-- 🧑‍💻 [github.com/lakshay-goyal](https://github.com/lakshay-goyal)
+- 🧑‍💻 [github.com/lakshay-devs](https://github.com/lakshay-devs)
 
 Always up for talking systems design, AI agents, or why your side project also needs Kubernetes (it doesn't, but let's talk anyway).

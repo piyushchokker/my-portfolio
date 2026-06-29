@@ -68,7 +68,7 @@ function ContactUs() {
 
               <div className="mt-7 flex gap-2">
                 <a
-                  href="https://github.com/lakshay-goyal"
+                  href="https://github.com/lakshay-devs"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"

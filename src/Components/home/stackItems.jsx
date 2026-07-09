@@ -3,26 +3,7 @@ const simpleIcon = (slug) => `https://cdn.jsdelivr.net/npm/simple-icons@latest/i
 const iconifyIcon = (icon, color = "6ee7b7") => `https://api.iconify.design/${icon}.svg?color=%23${color}`;
 
 const stackItems = [
-  {
-    label: "MERN Stack",
-    imageUrl: skillIcon("react"),
-  },
-  {
-    label: "NextJS",
-    imageUrl: skillIcon("nextjs"),
-  },
-  {
-    label: "Turborepo",
-    imageUrl: "https://imgs.search.brave.com/LA7z4ttLva03V1dNIppC_NHIGxJlfd4AwMvJN9qtmLw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzY1LzIvdHVyYm9y/ZXBvLWljb24tbG9n/by1wbmdfc2Vla2xv/Z28tNjUzMjA1LnBu/Zw",
-  },
-  {
-    label: "React-Native",
-    imageUrl: skillIcon("react"),
-  },
-  {
-    label: "Expo",
-    imageUrl: "https://images.seeklogo.com/logo-png/45/1/expo-go-app-logo-png_seeklogo-457073.png",
-  },
+
   {
     label: "PostgresDB",
     imageUrl: skillIcon("postgres"),
@@ -55,7 +36,7 @@ const stackItems = [
     label: "AWS",
     imageUrl: skillIcon("aws"),
   },
-    {
+  {
     label: "Python",
     imageUrl: skillIcon("python"),
   },
@@ -71,6 +52,22 @@ const stackItems = [
     label: "MCP",
     imageUrl: simpleIcon("modelcontextprotocol"),
     imageClassName: "brightness-0 invert",
+  },
+  {
+    label: "LlamaIndex",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuujmhhDXEqz6kOG6ixAOj1HeWh25mSIz7CdYtPeOE4hKdlrewmTFsg4&s=10",
+  },
+  {
+    label: "Google GCP",
+    imageUrl: "https://avatars.githubusercontent.com/u/2810941?s=280&v=4",
+  },
+  {
+    label: "Amazon SageMaker",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUlxECOa-gHFDfbmg_Ez0qfj4SrRq6CxltVMhlR4jeMvBIRB54itaVLGY&s=10",
+  },
+  {
+    label: "Supabase",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHpiCovcf59kKFAXDhHcHx-6anNAvDvUb9u5uqyE8Rg&s=10",
   },
 ];
 

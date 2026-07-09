@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { CheckCircle2, Copy, Github, Linkedin, Mail, MapPin } from "lucide-react";
-import Lakshay from "../assets/img/Lakshay.png";
+import Piyush from "../assets/img/Piyush.png";
 
-const email = "lakshaygoyal201@gmail.com";
+const email = "piyushchokker@gmail.com";
 
 function ContactUs() {
   const [copied, setCopied] = useState(false);
@@ -48,9 +48,9 @@ function ContactUs() {
 
             <div className="bg-[#0b0c10] p-6 sm:p-8">
               <div className="flex items-center gap-4">
-                <img src={Lakshay} alt="Lakshay Goyal" className="h-16 w-16 rounded-lg border border-white/10 object-cover grayscale" />
+                <img src={Piyush} alt="Piyush Chokker" className="h-16 w-16 rounded-lg border border-white/10 object-cover grayscale" />
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Lakshay Goyal</h3>
+                  <h3 className="text-xl font-semibold text-white">Piyush Chokker</h3>
                   <p className="mt-1 text-sm text-zinc-500">Software Developer</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ function ContactUs() {
 
               <div className="mt-7 flex gap-2">
                 <a
-                  href="https://github.com/lakshay-devs"
+                  href="https://github.com/piyushchokker"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -77,7 +77,7 @@ function ContactUs() {
                   <Github size={18} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/lakshay-goyal-9778a6246/"
+                  href="https://www.linkedin.com/in/piyushchokker/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"

@@ -14,17 +14,31 @@
     ]
   },
   {
-    "id": "2",
-    "title": "The 12 Week Year",
-    "author": "Brian P. Moran, Michael Lennington",
-    "cover": "https://m.media-amazon.com/images/I/71ZMsYuwELL._SY466_.jpg",
-    "description": "A practical execution system for compressing annual goals into focused 12-week cycles.",
-    "category": "Productivity",
-    "amazonLink": "https://www.amazon.in/12-Week-Year-Others-Months/dp/1118509234",
+    "id": "3",
+    "title": "White Nights",
+    "author": "Fyodor Dostoevsky",
+    "cover": "https://static.wixstatic.com/media/2d8b50_c3a6720ca5a144cd93404eb3f695b7bc~mv2.webp/v1/fill/w_568,h_852,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2d8b50_c3a6720ca5a144cd93404eb3f695b7bc~mv2.webp",
+    "description": "A short story about a solitary dreamer wandering the streets of St. Petersburg and experiencing fleeting romance.",
+    "category": "Currently Reading",
+    "amazonLink": "https://www.amazon.in/s?k=white+nights+fyodor+dostoevsky",
     "keyPoints": [
-      "Plan work in focused 12-week execution cycles",
-      "Create weekly scorecards and accountability rhythms",
-      "Build urgency around the highest-leverage goals"
+      "A deep exploration of isolation and unrequited love",
+      "The contrast between the dreamer's inner world and reality",
+      "Appreciating fleeting moments of connection"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "The First and Last Freedom",
+    "author": "J Krishnamurti",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/20/TheFirstAndLastFreedom.jpg",
+    "description": "A comprehensive exploration of human nature, fear, desire, and the path to psychological freedom.",
+    "category": "Phylosohy",
+    "amazonLink": "https://www.amazon.in/s?k=the+first+and+last+freedom",
+    "keyPoints": [
+      "Understanding the trap of belief systems",
+      "The relationship between the observer and the observed",
+      "Finding true freedom through self-awareness"
     ]
   }
-] 
+]

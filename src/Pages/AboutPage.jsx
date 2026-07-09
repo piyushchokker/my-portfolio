@@ -8,67 +8,53 @@ import {
 } from "lucide-react";
 import Loading from "../Components/Loading";
 import NavBar from "../Components/NavBar";
-import Lakshay from "../assets/img/Lakshay.png";
+import Piyush from "../assets/img/Piyush.png";
 
-import TranslatorApp from "../assets/img/LanguageTranslatorApplication.jpg";
 import College from "../assets/img/College.png";
-import Super30 from "../assets/img/Super30.png";
-import Super30Celebration from "../assets/img/Super30-Celebration.png";
-import Bangalore from "../assets/img/Bangalore.png";
+import SundropBrands from "../assets/img/SundropBrands.jpg";
+import OfferLetterAskOllie from "../assets/img/offerletter_askollie.jpeg";
+import KrmuFront from "../assets/img/krmu_front.jpeg";
 
 const storyBeats = [
   {
-    kicker: "Starting point / Jan 2022 - 2023",
-    title:
-      "I started by turning scattered curiosity into a clear learning track.",
-    body: "First and Second year of college gave me room to choose a direction seriously. I wanted a stack where I could learn by building, measure progress through projects, and keep improving the parts that users actually touch.",
+    kicker: "Building the Foundation",
+    title: "Bachelor of Computer Applications (AI & Data Science)",
+    body: "Enrolled in BCA with a specialization in AI and Data Science. I built a strong foundation in Machine Learning, Mathematics, and Artificial Neural Networks. This is where I first understood how biological neurons inspire computational models.",
     image: College,
-    imageAlt: "Pixel developer workspace banner",
+    imageAlt: "Building the Foundation",
   },
   {
-    kicker: "AI foundations",
-    title: "I spent serious time with core ML, DL, and the math behind it.",
-    body: "Coming from a commerce background without maths, I had to build the foundation deliberately. I spent most of that phase learning ML and DL concepts, then going back to mathematics from first principles so the models felt understandable instead of magical. And on that journey, Build an language translator Mobile app using local NLP Model in my 1st year of college.",
-    image: TranslatorApp,
-    imageAlt: "Mobile app project screenshot",
+    kicker: "Industry Experience",
+    title: "Applying Technology at Sundrop Brands",
+    body: "As an MIS Automation Engineer Intern, I engineered reporting automation using Python and advanced Excel, reducing manual processing time by over 70%. I learned that while automation saves time, intelligence creates value.",
+    image: SundropBrands,
+    imageAlt: "Sundrop Brands Experience",
   },
   {
-    kicker: "Mar / Apr 2025",
-    title: "MERN became the stack that turned learning into output.",
-    body: "I switched to MongoDB, Express, React, and Node during my final year. The first one or two projects were honestly generic, but they taught the real basics: auth, APIs, UI state, deployment, and how products behave outside tutorials.",
-
-    Icon: BrainCircuit,
+    kicker: "Advanced Studies",
+    title: "Master's in AI & Machine Learning",
+    body: "Pursued an MCA specializing in AI & ML to dive deeper into Deep Learning, LLMs, RAG, Agentic AI Systems, and Production AI Deployment. I built multiple AI applications that strengthened my engineering skills.",
+    image: KrmuFront,
+    imageAlt: "Master's Degree at KRMU",
   },
   {
-    kicker: "Super30",
-    title: "Super30 made the learning curve faster and more serious.",
-    body: "Getting into Super30 by @kirat_tw put me around people who were serious about building and learning in public. The pace pushed me to pick up new things quickly, ask better questions, and move my projects beyond basic tutorial work.",
-    image: Super30,
-  },
-  {
-    kicker: "Learning phase",
-    title:
-      "The journey became less about one stack and more about engineering depth.",
-    body: "During Super30, I started learning the parts many beginner projects skip: cleaner UI flows, stronger backend decisions, deployment, DevOps basics, AI engineering, real-time systems, and system design. Shipping more made me understand why things scale, fail, and recover.",
-    image: Super30Celebration,
-  },
-  {
-    kicker: "Now",
-    title:
-      "Moving from Delhi to Bangalore brought that learning into real product work.",
-    body: "I travelled from Delhi to Bangalore to learn more, explore new opportunities, and put myself closer to serious product work. At @getfozo, working with @sumitalk_s, I get to apply that growth in production: cleaner screens, practical engineering choices, and software that has to work for real users, not just demos.",
-    image: Bangalore,
-    imageAlt: "Lakshay Goyal",
-  },
+    kicker: "Real-world Scale",
+    title: "Building AskOllie — A Production RAG System",
+    body: "Developed an AI-powered university assistant serving ~9,000 monthly users. Working on AskOllie taught me production AI engineering, document ingestion pipelines, vector databases, and the practical challenges of deploying reliable AI.",
+    image: OfferLetterAskOllie,
+    imageAlt: "AskOllie Offer Letter",
+  }
 ];
 
 const tools = [
-  "MERN",
-  "React Native",
-  "Expo",
-  "DevOps",
-  "AI Engineering",
-  "System Design",
+  "Python",
+  "FastAPI",
+  "LangChain",
+  "LangGraph",
+  "PostgreSQL",
+  "RAG",
+  "LLMs",
+  "Computer Vision",
 ];
 
 function StoryVisual({ beat, index }) {
@@ -81,7 +67,7 @@ function StoryVisual({ beat, index }) {
           src={beat.image}
           alt={beat.imageAlt}
           loading={index === 0 ? "eager" : "lazy"}
-          className={`h-full min-h-[230px] w-full object-cover grayscale transition duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0 ${beat.image === Lakshay ? "object-[center_22%]" : ""}`}
+          className={`h-full min-h-[230px] w-full object-cover transition duration-500 ease-out group-hover:scale-105 ${beat.image === Piyush ? "object-[center_22%]" : ""}`}
         />
       </div>
     );
@@ -152,7 +138,7 @@ function AboutPage() {
             </a>
             <div className="flex items-center gap-2">
               <a
-                href="https://github.com/lakshay-devs"
+                href="https://github.com/piyushchokker"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:text-white"
@@ -172,26 +158,26 @@ function AboutPage() {
               about me
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.04em] text-white drop-shadow-[0_0_18px_rgba(255,255,255,0.22)] sm:text-5xl">
-              I turn curiosity into shipped software.
+              I build practical AI applications that solve real-world problems.
             </h1>
           </section>
 
           <section className="grid border-b border-white/10 sm:grid-cols-[176px_1fr]">
             <div className="relative flex items-center justify-center border-b border-white/10 p-4 sm:border-b-0 sm:border-r">
-              <img
-                src={Lakshay}
-                alt="Lakshay Goyal"
-                className="-mt-10 h-36 w-36 rounded-full border-4 border-[#070707] object-cover object-[center_22%] shadow-[0_0_0_1px_rgba(255,255,255,0.18)] transition duration-500 ease-out hover:scale-105 sm:-mt-12"
-              />
+              <div className="-mt-10 h-36 w-36 overflow-hidden rounded-full border-4 border-[#070707] shadow-[0_0_0_1px_rgba(255,255,255,0.18)] sm:-mt-12">
+                <img
+                  src={Piyush}
+                  alt="Piyush Chokker"
+                  className="h-full w-full scale-[1.2] object-cover object-[center_22%] transition duration-500 ease-out hover:scale-[1.25]"
+                />
+              </div>
             </div>
             <div className="grid content-center px-5 pb-24 pt-6 sm:py-6">
               <p className="text-base font-bold text-white">
-                Hi, I am Lakshay.
+                Hi, I am Piyush.
               </p>
               <p className="mt-3 font-mono text-sm leading-7 text-zinc-400">
-                A developer from India building real products at FOZO. I like
-                interfaces that feel polished, systems that stay understandable,
-                and projects that survive beyond the demo.
+                Ever since I was a child watching JARVIS, I've been fascinated by intelligent systems. Today, as an AI Engineer from India, I enjoy taking ideas from concept to deployment by combining software engineering with modern AI technologies like Agentic AI, LLMs, and Computer Vision.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {tools.map((tool) => (
@@ -221,15 +207,13 @@ function AboutPage() {
           <section className="px-5 py-12 sm:px-7">
             <div className="max-w-xl">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-600">
-                where it leaves me
+                looking ahead
               </p>
               <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-white">
-                Still learning. Still shipping.
+                To build AI that genuinely helps people.
               </h2>
               <p className="mt-5 font-mono text-sm leading-7 text-zinc-400">
-                I am not trying to make the journey sound perfectly planned. It
-                was exploration, course correction, fast learning, and a lot of
-                rebuilding. That is also what made the work better.
+                From being inspired by a fictional AI assistant to engineering real-world intelligent systems, my journey has always been driven by one goal. Every project I undertake brings me one step closer to that childhood dream of creating intelligent systems that can understand, reason, and make human life easier.
               </p>
             </div>
           </section>

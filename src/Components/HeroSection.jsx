@@ -17,23 +17,23 @@ import {
   Terminal,
   Twitter,
 } from "lucide-react";
-import Lakshay from "../assets/img/Lakshay.png";
+import Piyush from "../assets/img/Piyush.png";
 import Banner from "../assets/img/developer-pixel-banner.jpg";
 import StackSection from "./home/StackSection";
 import ExperienceSection from "./home/ExperienceSection";
 import MajorProjects from "./MajorProjects";
 
-const email = "lakshaygoyal201@gmail.com";
+const email = "piyushchokker@gmail.com";
 
 const profileFacts = [
   {
-    value: "Founding Engineer @ FOZO",
-    href: "https://getfozo.in",
+    value: "AI Engineer",
+    href: "https://www.linkedin.com/in/piyushchokker/",
     Icon: Code2,
   },
   {
     label: "location",
-    value: "Bangalore, India",
+    value: "Gurugram, India",
     Icon: MapPin,
   },
   {
@@ -43,9 +43,9 @@ const profileFacts = [
     Icon: Mail,
   },
   {
-    label: "site",
-    value: "lakshaygoyal.in",
-    href: "https://lakshaygoyal.in",
+    label: "Phone No.",
+    value: "+91 8826430310",
+    href: "tel:+918826430310",
     Icon: Globe2,
   },
 ];
@@ -53,34 +53,34 @@ const profileFacts = [
 const socialLinks = [
   {
     label: "Projects",
-    handle: "Mobile / Web / AI",
+    handle: "AI / Backend / LLMs",
     href: "/projects",
     Icon: PackageOpen,
   },
   {
     label: "GitHub",
-    handle: "@lakshay-devs (Temporary) · primary acct have some issues",
-    href: "https://github.com/lakshay-devs",
+    handle: "@piyushchokker",
+    href: "https://github.com/piyushchokker",
     Icon: Github,
   },
   {
     label: "X",
-    handle: "@lakshayg2004",
-    href: "https://x.com/lakshayg2004",
+    handle: "@piyushchokker",
+    href: "https://x.com/piyushchokker",
     Icon: Twitter,
   },
   {
     label: "LinkedIn",
-    handle: "lakshay-goyal",
-    href: "https://www.linkedin.com/in/lakshay-goyal-9778a6246/",
+    handle: "piyushchokker",
+    href: "https://www.linkedin.com/in/piyushchokker/",
     Icon: Linkedin,
   },
 ];
 
 const subtitles = [
-  "Learning stacks by building",
-  "Brainstorm before building.",
-  "Build for users, not engineers.",
+  "Building practical AI applications",
+  "Solving real-world business problems",
+  "Taking ideas from concept to deployment",
 ];
 
 function HeroSection() {
@@ -136,7 +136,7 @@ function HeroSection() {
       >
         <header className="flex h-14 items-center justify-end gap-2 border-y border-white/10 px-3">
           <a
-            href="https://cal.com/lakshay-goyal/30min?overlayCalendar=true"
+            href="https://cal.com/piyushchokker/30min?overlayCalendar=true"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-8 items-center gap-2 rounded-md border border-emerald-300/40 bg-emerald-300/[0.08] px-3 font-mono text-xs text-emerald-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-300/70 hover:text-emerald-200"
@@ -145,7 +145,7 @@ function HeroSection() {
             Book a call
           </a>
           <a
-            href="/Lakshay_Resume.pdf"
+            href="/piyushchokker.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-8 items-center gap-2 rounded-md border border-white/15 bg-white/[0.04] px-3 font-mono text-xs text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:text-white"
@@ -154,7 +154,7 @@ function HeroSection() {
             Resume
           </a>
           <a
-            href="https://github.com/lakshay-devs"
+            href="https://github.com/piyushchokker"
             target="_blank"
             rel="noopener noreferrer"
             className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:text-white"
@@ -163,7 +163,7 @@ function HeroSection() {
             <Github size={15} />
           </a>
           <a
-            href="https://x.com/lakshayg2004"
+            href="https://x.com/piyushchokker"
             target="_blank"
             rel="noopener noreferrer"
             className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:text-white"
@@ -172,7 +172,7 @@ function HeroSection() {
             <Twitter size={15} />
           </a>
           <a
-            href="https://www.linkedin.com/in/lakshay-goyal-9778a6246/"
+            href="https://www.linkedin.com/in/piyushchokker/"
             target="_blank"
             rel="noopener noreferrer"
             className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-zinc-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:text-white"
@@ -191,7 +191,7 @@ function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#070707] via-transparent to-black/25" />
           <div className="absolute inset-0 flex items-center justify-center px-4">
             <h1 className="font-mono text-3xl font-black tracking-[-0.04em] text-white drop-shadow-[4px_4px_0_rgba(0,0,0,0.55)] sm:text-5xl">
-              lakshaygoyal.in
+              Piyush Chokker
             </h1>
           </div>
         </div>
@@ -200,20 +200,20 @@ function HeroSection() {
           <div className="relative flex items-center justify-center border-b border-white/10 p-4 sm:border-b-0 sm:border-r">
             <a
               href="/about"
-              aria-label="Open Lakshay Goyal's about page"
-              className="-mt-14 rounded-full transition-transform duration-200 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300 sm:-mt-16"
+              aria-label="Open Piyush Chokker's about page"
+              className="-mt-14 block h-36 w-36 overflow-hidden rounded-full border-4 border-[#070707] shadow-[0_0_0_1px_rgba(255,255,255,0.18)] transition-transform duration-200 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300 sm:-mt-16"
             >
               <img
-                src={Lakshay}
-                alt="Lakshay Goyal"
-                className="h-36 w-36 rounded-full border-4 border-[#070707] object-cover shadow-[0_0_0_1px_rgba(255,255,255,0.18)]"
+                src={Piyush}
+                alt="Piyush Chokker"
+                className="h-full w-full scale-[1.2] object-cover"
               />
             </a>
           </div>
           <div className="grid content-end">
             <div className="border-b border-white/10 px-5 py-4">
               <p className="font-mono text-xs text-emerald-300">
-                Building mobile products with clean software.
+                Building practical AI applications that solve real-world problems.
               </p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 <a
@@ -221,7 +221,7 @@ function HeroSection() {
                   className="group inline-flex items-center gap-2 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300"
                 >
                   <h2 className="text-3xl font-bold tracking-[-0.03em] text-white transition-colors group-hover:text-emerald-100">
-                    Lakshay Goyal
+                    Piyush Chokker
                   </h2>
                 </a>
                 <span className="grid h-5 w-5 place-items-center rounded-full bg-sky-400 text-[10px] font-black text-black">
@@ -289,9 +289,7 @@ function HeroSection() {
               <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-zinc-700">
                 Skills
               </span>
-              <span className="block text-sm font-semibold text-zinc-100">
-                Software Development + AI Engineering
-              </span>
+              AI Engineering + Backend Development
             </span>
           </div>
           <div className="flex min-w-0 items-center gap-3 rounded-md px-2 py-2">
@@ -303,7 +301,7 @@ function HeroSection() {
                 main stack
               </span>
               <span className="block text-sm font-semibold text-zinc-100">
-                React Native, Expo, MERN
+                Python, FastAPI, LangChain, PostgreSQL
               </span>
             </span>
           </div>
@@ -346,10 +344,7 @@ function HeroSection() {
             </h3>
           </header>
           <p className="mt-4 max-w-2xl px-4 pb-5 font-mono text-sm leading-7 text-zinc-300 sm:px-5">
-            Hi, I&apos;m Lakshay. I work as a Founding Engineer at FOZO in
-            Bangalore. I like building practical products, understanding the
-            problem before jumping into code, and learning from the small
-            details that show up when people actually use something.
+            Hi, I&apos;m Piyush. I am an AI Engineer focused on building practical AI applications that solve real-world business problems. I enjoy taking ideas from concept to deployment by combining software engineering with modern AI technologies.
           </p>
         </section>
 

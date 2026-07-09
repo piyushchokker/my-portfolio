@@ -45,19 +45,16 @@ function AboutMe() {
           >
             <div className="mb-4 flex items-center gap-2 font-mono text-xs text-zinc-500">
               <Braces size={15} className="text-emerald-300" />
-              lakshay.profile.json
+              piyush.profile.json
             </div>
             <p className="text-lg leading-8 text-zinc-300">
-              I am Lakshay Goyal, a BCA graduate from K.R. Mangalam University and a
-              software developer focused on building useful web and app experiences.
-              My current work spans MERN stack development, API connectivity, DevOps
-              fundamentals, and practical exploration in Blockchain and Artificial
-              Intelligence.
+              I am Piyush Chokker, currently pursuing my MCA specializing in AI and Machine Learning. 
+              My current work spans Agentic AI, Large Language Models, Backend APIs, and practical 
+              AI application development.
             </p>
             <p className="mt-5 text-lg leading-8 text-zinc-400">
-              I care about product interfaces that feel sharp, backend flows that are
-              understandable, and projects that show how a system behaves beyond a
-              screenshot.
+              I care about intelligent systems that solve real-world business problems, backend flows that are
+              scalable, and taking ideas from concept to deployment.
             </p>
           </motion.div>
 

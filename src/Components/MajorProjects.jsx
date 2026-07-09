@@ -31,7 +31,7 @@ function MajorProjectCard({ project, index, onVideoClick }) {
               "https://res.cloudinary.com/dkiktv5ur/image/upload/v1734670441/ekftfhtrsbueajzfquwn.png"
             }
             alt={project.title}
-            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            className={`h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02] ${project.imageClassName || ""}`}
           />
         )}
 

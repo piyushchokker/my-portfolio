@@ -139,28 +139,28 @@ function NavBar() {
   const utilityItems = useMemo(
     () => [
       {
-        href: "https://github.com/lakshay-devs",
+        href: "https://github.com/piyushchokker",
         label: "GitHub",
         Icon: Github,
         type: "external",
         social: true,
       },
       {
-        href: "https://www.linkedin.com/in/lakshay-goyal-9778a6246/",
+        href: "https://www.linkedin.com/in/piyushchokker/",
         label: "LinkedIn",
         Icon: Linkedin,
         type: "external",
         social: true,
       },
       {
-        href: "https://x.com/lakshayg2004",
+        href: "https://x.com/piyushchokker",
         label: "X",
         Icon: Twitter,
         type: "external",
         social: true,
       },
       {
-        href: "/Lakshay_Resume.pdf",
+        href: "/piyushchokker.pdf",
         label: "Resume",
         Icon: FileText,
         type: "external",

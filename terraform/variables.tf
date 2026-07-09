@@ -7,5 +7,5 @@ variable "aws_region" {
 variable "domain_name" {
   description = "The domain name for the portfolio application"
   type        = string
-  default     = "lakshaygoyal.in"
+  default     = "piyushchokker.in"
 }

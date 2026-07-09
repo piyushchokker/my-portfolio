@@ -1,38 +1,103 @@
 [
   {
-    "title": "Unlovable - Application Builder.",
-    "description": "Built an application builder, where anyone can able to generate an web application using a prompt and creativity.",
-    "tech": ["Turborepo", "Expo", "E2B sandbox", "Redis", "Websocket", "PostgreSQL", "Langchain", "Langgraph", "RAG"],
-    "image": "/Image/UnlovableWeb.png",
-    "github": "https://github.com/lakshay-devs/Unlovable",
-    "live": "https://unlovable.lakshaygoyal.in/",
-    "videoLink": "/video/UnlovableWeb.mp4"
-  },
-  {
-    "title": "Unlovable - Mobile Application.",
-    "description": "Built an Mobile application builder, where anyone can able to generate an mobile application using a prompt and creativity.",
-    "tech": ["React Native", "Expo", "Nativewind", "EAS"],
-    "image": "/Image/UnlovableMobile.png",
-    "github": "https://github.com/lakshay-devs/Unlovable",
+    "title": "askoliie (RAG Chatbot)",
+    "description": "Built a production-ready AI-powered RAG chatbot using Next.js 16, FastAPI, Supabase Auth, Redis, Qdrant Vector DB, and SSE streaming, supporting ~8,000 monthly users. Developed custom orchestration for retrieval. Implemented secure JWT auth, metadata-filtered Qdrant pipeline, and a 3-layer caching architecture. Optimized response time to 700-1000ms. Evaluated quality using RAGAS.",
+    "tech": [
+      "Next.js 16",
+      "FastAPI",
+      "Supabase Auth",
+      "Redis",
+      "Qdrant",
+      "Python"
+    ],
+    "image": "/Image/kchat_chat.png",
+    "imageClassName": "!object-cover",
+    "github": "https://github.com/piyushchokker",
     "live": "",
-    "videoLink": "/video/UnlovableMobile.mp4"
+    "videoLink": ""
   },
   {
-    "title": "Exness - CFD Application.",
-    "description": "A CFD application for trade on crypto currencies.",
-    "tech": ["Turborepo", "Redis", "Pub-Sub", "TimescaleDB", "Websocket", "PostgreSQL"],
-    "image": "/Image/ExnessWeb.png",
-    "github": "https://github.com/lakshay-devs/Exness",
-    "live": "https://exness.lakshaygoyal.in/",
-    "videoLink": "/video/ExnessWeb.mp4"
-  },
-  {
-    "title": "Exness - Mobile Application.",
-    "description": "A CFD Mobile application for trade on crypto currencies.",
-    "tech": ["React Native", "Expo", "Nativewind", "EAS"],
-    "image": "/Image/ExnessMobile.png",
-    "github": "https://github.com/lakshay-devs/Exness",
+    "title": "Model Deployment on NVIDIA DGX Spark",
+    "description": "Set up an NVIDIA DGX Spark AI infrastructure with Triton Inference Server. Deployed a quantized AI model using vLLM for inference efficiency. Implemented an optimized inference workflow using Triton.",
+    "tech": [
+      "NVIDIA DGX Spark",
+      "Triton Inference Server",
+      "vLLM",
+      "LLMs",
+      "Python"
+    ],
+    "image": "/Image/dgx.jpeg",
+    "imageClassName": "scale-110",
+    "github": "https://github.com/piyushchokker",
     "live": "",
-    "videoLink": "/video/ExnessMobile.mp4"
+    "videoLink": ""
+  },
+  {
+    "title": "PhantomPointer",
+    "description": "Developed an Invisible Mouse system using computer vision to replace a physical mouse by tracking hand movements on a flat surface. Implemented real-time gesture recognition and motion tracking with OpenCV to simulate cursor movement and click actions.",
+    "tech": [
+      "Python",
+      "OpenCV",
+      "Computer Vision"
+    ],
+    "image": "/Image/phantonpointer.jpeg",
+    "github": "https://github.com/piyushchokker",
+    "live": "",
+    "videoLink": ""
+  },
+  {
+    "title": "Mistral 7B Fine-Tuning on Amazon SageMaker",
+    "description": "Fine-tuned a Mistral 7B large language model using LoRA and quantized LoRA (QLoRA) on Amazon SageMaker to optimize training efficiency and model performance.",
+    "tech": [
+      "Mistral 7B",
+      "LoRA / QLoRA",
+      "Amazon SageMaker",
+      "LLMs",
+      "Python"
+    ],
+    "image": "/Image/mistral.png",
+    "github": "https://github.com/piyushchokker",
+    "live": "",
+    "videoLink": ""
+  },
+  {
+    "title": "Sports Games Image Classification",
+    "description": "Trained a classification model on 13,000 images for sports games using NVIDIA DGX Spark infrastructure.",
+    "tech": [
+      "Machine Learning",
+      "Computer Vision",
+      "NVIDIA DGX Spark",
+      "Python"
+    ],
+    "image": "/Image/dgx.jpeg",
+    "imageClassName": "scale-110",
+    "github": "https://github.com/piyushchokker",
+    "live": "",
+    "videoLink": ""
+  },
+  {
+    "title": "Agentic Voice Orchestrator (Multi-Tenant SaaS)",
+    "description": "Developed a production-ready, multi-tenant AI voice orchestration platform that enables organizations to create, manage, and monitor intelligent outbound calling campaigns. Built the backend using FastAPI with LangGraph for agent orchestration, integrating both Twilio and Vapi AI for scalable voice communication. Implemented secure multi-tenant architecture with PostgreSQL (Supabase), asynchronous processing, webhook-driven event handling, and real-time call lifecycle management.",
+    "tech": [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "PostgreSQL",
+      "Supabase",
+      "Twilio",
+      "Vapi AI",
+      "Docker",
+      "Google Cloud Run",
+      "REST APIs",
+      "AsyncIO",
+      "Webhooks",
+      "TypeScript",
+      "React"
+    ],
+    "image": "/Image/agenticVoice.png",
+    "imageClassName": "!object-cover object-top",
+    "github": "https://github.com/piyushchokker",
+    "live": "",
+    "videoLink": ""
   }
 ]

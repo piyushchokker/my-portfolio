@@ -5,7 +5,6 @@ import { ArrowLeft, ExternalLink, Github, PlayCircle, X } from "lucide-react";
 import Loading from "./Loading";
 import RouteShell from "./RouteShell";
 import useAllProjectsStore from "../store/zustand/useAllProjectsStore";
-import LanguageTranslatorApplicationImg from "../assets/img/LanguageTranslatorApplication.jpg";
 
 const labels = {
   web: "Web Projects",
@@ -15,10 +14,7 @@ const labels = {
 };
 
 const getProjectImage = (image) => {
-  if (!image) return "https://res.cloudinary.com/dkiktv5ur/image/upload/v1734670441/ekftfhtrsbueajzfquwn.png";
-  if (image === "LanguageTranslatorApplicationImg") {
-    return LanguageTranslatorApplicationImg;
-  }
+  if (!image || image === "LanguageTranslatorApplicationImg") return "https://res.cloudinary.com/dkiktv5ur/image/upload/v1734670441/ekftfhtrsbueajzfquwn.png";
   return image;
 };
 

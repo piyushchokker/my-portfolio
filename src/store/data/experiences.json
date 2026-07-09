@@ -1,58 +1,51 @@
 [
   {
-    "company": "FOZO",
-    "url": "https://getfozo.in",
-    "role": "Founding Engineer",
-    "period": "Dec 2025 — Present",
-    "location": "Bangalore, India",
-    "cursorLogo": "/FOZO/logo.png",
+    "company": "KRMU",
+    "url": "",
+    "role": "AI & Software Development Intern",
+    "period": "Internship",
+    "location": "India",
+    "cursorLogo": "https://img.freepik.com/free-vector/flat-design-devops-illustration_52683-84086.jpg",
     "showcase": {
-      "screens": [
-        {
-          "src": "/FOZO/Fozo1.png",
-          "title": "Onboarding",
-          "caption": "Swipeable onboarding and phone auth entry"
-        },
-        {
-          "src": "/FOZO/Fozo2.png",
-          "title": "Grocery Home",
-          "caption": "Category tabs, flash sale, and product discovery"
-        },
-        {
-          "src": "/FOZO/Fozo3.png",
-          "title": "Food Discovery",
-          "caption": "Promotions, cuisine filters, and cart preview"
-        },
-        {
-          "src": "/FOZO/Fozo4.png",
-          "title": "Restaurant Detail",
-          "caption": "Surprise bag listing with ratings and pricing"
-        },
-        {
-          "src": "/FOZO/Fozo5.png",
-          "title": "Checkout",
-          "caption": "Cart, delivery details, upsells, and payment"
-        }
-      ]
+      "screens": []
     },
-    "summary": "Owning development and operations end to end for a surplus food delivery platform — from architecture decisions to production deployment.",
+    "summary": "Developed 'askoliie', a production-ready AI-powered RAG chatbot supporting around 8,000 monthly users.",
     "highlights": [
-      "Built the entire mobile application from scratch using React Native and Expo, covering everything from architecture decisions to production deployment.",
-      "Develop and maintain the admin dashboard and backend services with Next.js and Node.js, handling both customer-facing and internal tooling end to end.",
-      "Architected the system for scalability from day one, supporting up to 1,000 concurrent users with low-latency performance.",
-      "Set up and manage the full AWS infrastructure — deployment pipelines, monitoring via New Relic and Mixpanel, and production operations without a dedicated DevOps team.",
-      "Built and own the CI/CD automation pipeline, enabling seamless automated deployments and end-to-end testing across environments.",
-      "Drive UI/UX decisions with a user-first approach, contributing to higher engagement and retention as the product grows."
+      "Developed a custom RAG orchestration and retrieval system, iteratively replacing LangChain and LlamaIndex for improved performance.",
+      "Implemented a metadata-filtered Qdrant vector retrieval pipeline achieving sub-60 ms document chunk retrieval.",
+      "Engineered a 3-layer caching architecture (session, semantic, runtime) reducing repeated computation.",
+      "Optimized chat performance to 700–1000 ms total API response time and evaluated RAG quality using RAGAS."
     ],
     "stack": [
-      "React Native",
-      "Expo",
-      "Next.js",
-      "Node.js",
-      "AWS",
-      "CI/CD",
-      "New Relic",
-      "Mixpanel"
+      "Next.js 16",
+      "FastAPI",
+      "Qdrant",
+      "Redis",
+      "Python"
+    ]
+  },
+  {
+    "company": "Sundrop",
+    "url": "",
+    "role": "MIS & Business Automation",
+    "period": "Previous",
+    "location": "India",
+    "cursorLogo": "https://img.freepik.com/free-vector/flat-design-devops-illustration_52683-84086.jpg",
+    "showcase": {
+      "screens": []
+    },
+    "summary": "Worked in MIS with the primary intention of automating business tasks and optimizing operational efficiency.",
+    "highlights": [
+      "Engineered MIS reporting automation using Python scripts and advanced Excel functions (VLOOKUP, Pivot Tables) for operational data, resulting in a 70%+ reduction in manual processing time.",
+      "Conducted data validation and analysis on operational datasets to identify supply and sale bottlenecks and improve data integrity for procurement-related decision-making",
+      "Managed and integrated e-commerce sales/inventory data from major marketplace APIs (Amazon, Flipkart, etc.), creating centralized datasets critical for forecasting and raw material procurement planning"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "Selenium",
+      "PostgreSQL",
+      "Automation"
     ]
   }
 ]

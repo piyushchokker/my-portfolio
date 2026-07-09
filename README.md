@@ -1,18 +1,18 @@
-# Hey, I'm Lakshay 👋
+# Hey, I'm Piyush 👋
 
-This is the repo behind [lakshaygoyal.in](https://lakshaygoyal.in) — my little corner of the internet. It started as "just a portfolio site" and, like every side project I touch, ended up with its own Terraform-managed AWS infrastructure, a CI/CD pipeline, and automated DNS syncing. Could I have thrown it on Vercel in 5 minutes? Absolutely. Did I? No. We don't do things the easy way here — we do them the *fun* way.
+This is the repo behind [piyushchokker.in](https://piyushchokker.in) — my little corner of the internet. It started as "just a portfolio site" and, like every side project I touch, ended up with its own Terraform-managed AWS infrastructure, a CI/CD pipeline, and automated DNS syncing. Could I have thrown it on Vercel in 5 minutes? Absolutely. Did I? No. We don't do things the easy way here — we do them the *fun* way.
 
 ## Stuff I've built (the highlights)
 
 These are the projects featured on the site. Each one taught me something I couldn't have learned from a tutorial.
 
-### 🤖 [Unlovable](https://unlovable.lakshaygoyal.in/) — AI-powered app builder
+### 🤖 [Unlovable](https://unlovable.piyushchokker.in/) — AI-powered app builder
 
-Type a prompt, get a working web or mobile application. Lovable, but mine — hence the name. Under the hood: LangChain + LangGraph agents with RAG, code execution inside E2B sandboxes, WebSockets for live streaming of the build, Redis + PostgreSQL holding it all together in a Turborepo monorepo. There's also a second architecture variant I built from scratch on Kubernetes + Docker + Nginx specifically to handle scalable AI workloads — because one architecture is never enough. Also has a React Native mobile builder variant. [Code →](https://github.com/lakshay-devs/Unlovable)
+Type a prompt, get a working web or mobile application. Lovable, but mine — hence the name. Under the hood: LangChain + LangGraph agents with RAG, code execution inside E2B sandboxes, WebSockets for live streaming of the build, Redis + PostgreSQL holding it all together in a Turborepo monorepo. There's also a second architecture variant I built from scratch on Kubernetes + Docker + Nginx specifically to handle scalable AI workloads — because one architecture is never enough. Also has a React Native mobile builder variant. [Code →](https://github.com/piyushchokker/Unlovable)
 
-### 📈 [Exness](https://exness.lakshaygoyal.in/) — CFD trading platform
+### 📈 [Exness](https://exness.piyushchokker.in/) — CFD trading platform
 
-Real-time crypto prices streamed from Binance, buy/sell order placement, candlestick charts — the whole trading experience. This one was a real-time systems masterclass: Redis pub-sub fanning out price ticks, TimescaleDB for time-series candles, WebSockets keeping every connected client in sync. Deployed on AWS with Terraform, load balancers, and auto-scaling groups, plus monitoring to watch users actually use it. Mobile version built with React Native/Expo. [Code →](https://github.com/lakshay-devs/Exness)
+Real-time crypto prices streamed from Binance, buy/sell order placement, candlestick charts — the whole trading experience. This one was a real-time systems masterclass: Redis pub-sub fanning out price ticks, TimescaleDB for time-series candles, WebSockets keeping every connected client in sync. Deployed on AWS with Terraform, load balancers, and auto-scaling groups, plus monitoring to watch users actually use it. Mobile version built with React Native/Expo. [Code →](https://github.com/piyushchokker/Exness)
 
 There's a longer tail of smaller projects on the site too — clones, tools, experiments. The graveyard of side projects is where the learning happened.
 
@@ -62,10 +62,10 @@ If you want to deploy your own version, `terraform/` has everything — bring yo
 
 ## Say hi
 
-- 🌐 [lakshaygoyal.in](https://lakshaygoyal.in)
-- 📧 [lakshaygoyal201@gmail.com](mailto:lakshaygoyal201@gmail.com)
-- 💼 [LinkedIn](https://www.linkedin.com/in/lakshay-goyal-9778a6246)
-- 🐦 [@lakshayg2004](https://twitter.com/lakshayg2004)
-- 🧑‍💻 [github.com/lakshay-devs](https://github.com/lakshay-devs)
+- 🌐 [piyushchokker.in](https://piyushchokker.in)
+- 📧 [piyushchokker@gmail.com](mailto:piyushchokker@gmail.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/piyush-chokker)
+- 🐦 [@piyushchokker](https://twitter.com/piyushchokker)
+- 🧑‍💻 [github.com/piyushchokker](https://github.com/piyushchokker)
 
 Always up for talking systems design, AI agents, or why your side project also needs Kubernetes (it doesn't, but let's talk anyway).

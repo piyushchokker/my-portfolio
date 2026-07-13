@@ -43,6 +43,13 @@ const storyBeats = [
     body: "Developed an AI-powered university assistant serving ~9,000 monthly users. Working on AskOllie taught me production AI engineering, document ingestion pipelines, vector databases, and the practical challenges of deploying reliable AI.",
     image: OfferLetterAskOllie,
     imageAlt: "AskOllie Offer Letter",
+  },
+  {
+    kicker: "Advanced AI Development",
+    title: "Full Stack AI Developer Intern at Krid.ai",
+    body: "Developing production-ready full-stack AI applications using modern web technologies and LLMs. Designing agentic AI workflows and integrating external APIs, databases, and cloud infrastructure.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRL0sDKABl_IXbZgs8SeS3OZyycTTtrOdyG21aPSDdlA&s=10",
+    imageAlt: "Krid.ai Experience",
   }
 ];
 

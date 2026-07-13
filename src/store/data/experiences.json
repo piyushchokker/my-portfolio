@@ -1,7 +1,25 @@
 [
   {
+    "company": "Krid.ai",
+    "url": "https://krid.ai/",
+    "role": "Full Stack AI Developer Intern",
+    "period": "Internship",
+    "location": "India",
+    "cursorLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRL0sDKABl_IXbZgs8SeS3OZyycTTtrOdyG21aPSDdlA&s=10",
+    "showcase": {
+      "screens": []
+    },
+    "summary": "agentic AI solutions and Retrieval-Augmented Generation (RAG) systems.",
+    "highlights": [
+      "Developing production-ready full-stack AI applications using modern web technologies and large language models (LLMs).",
+      "Building scalable backend APIs, responsive frontend interfaces, and AI-powered features for enterprise applications.",
+      "Designing and integrating agentic AI workflows, external APIs, databases, and cloud infrastructure to automate complex business processes."
+    ],
+    "stack": []
+  },
+  {
     "company": "KRMU",
-    "url": "",
+    "url": "https://www.krmangalam.edu.in/",
     "role": "AI & Software Development Intern",
     "period": "Internship",
     "location": "India",
@@ -26,8 +44,8 @@
   },
   {
     "company": "Sundrop",
-    "url": "",
-    "role": "MIS & Business Automation",
+    "url": "https://www.sundropbrands.com/",
+    "role": "MIS & Automation Engineer",
     "period": "Previous",
     "location": "India",
     "cursorLogo": "https://img.freepik.com/free-vector/flat-design-devops-illustration_52683-84086.jpg",

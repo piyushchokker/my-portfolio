@@ -48,7 +48,7 @@ function AboutMe() {
               piyush.profile.json
             </div>
             <p className="text-lg leading-8 text-zinc-300">
-              I am Piyush Chokker, currently pursuing my MCA specializing in AI and Machine Learning. 
+              I am Piyush Chokker, currently pursuing my MCA specializing in AI and Machine Learning, and working as a Full Stack AI Developer Intern at Krid.ai. 
               My current work spans Agentic AI, Large Language Models, Backend APIs, and practical 
               AI application development.
             </p>

@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loading from "./Components/Loading";
 import { ThemeProvider } from "./Components/ThemeContext";
 import HomePage from "./Pages/HomePage";
+import CalFloatingButton from "./Components/CalFloatingButton";
 
 const AboutPage = lazy(() => import("./Pages/AboutPage"));
 const ProjectPage = lazy(() => import("./Components/ProjectPage"));
@@ -53,6 +54,7 @@ function App() {
   return (
     <ThemeProvider>
       <RouterProvider router={router} />
+      <CalFloatingButton />
     </ThemeProvider>
   );
 }
